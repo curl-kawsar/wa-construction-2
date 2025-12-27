@@ -1,0 +1,130 @@
+"use client";
+
+import Image from "next/image";
+import { useState } from "react";
+
+export default function LeadershipSection() {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+        <section className="bg-white py-24 md:py-28 pb-8 md:pb-12 relative overflow-hidden">
+            {/* Background Image with subtle animation */}
+            <div
+                className="absolute inset-0 pointer-events-none bg-center bg-no-repeat transition-all duration-1000 ease-in-out"
+                style={{
+                    backgroundImage: "url('/ceo-bg.png')",
+                    backgroundSize: "40%",
+                    opacity: isHovered ? 0.4 : 0.25,
+                    transform: isHovered ? "scale(1.02)" : "scale(1)",
+                }}
+            ></div>
+
+            {/* Dotted pattern background using border color */}
+            <div
+                className="absolute inset-0 pointer-events-none opacity-10"
+                style={{
+                    backgroundImage: "radial-gradient(circle, #5C1010 1px, transparent 2px)",
+                    backgroundSize: "24px 24px",
+                }}
+            ></div>
+
+            {/* Subtle gradient overlay */}
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-white/30 to-white/60"></div>
+
+            <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10">
+                {/* CEO Profile */}
+                <div className="mb-20">
+                    {/* Profile Image Container with Border - Enhanced with hover effect */}
+                    <div
+                        className="mx-auto mb-10 inline-block p-2 rounded-full transition-all duration-500 ease-out cursor-pointer"
+                        style={{
+                            backgroundColor: "#5C1010",
+                            boxShadow: isHovered
+                                ? "0 20px 60px -15px rgba(92, 16, 16, 0.5), 0 0 40px rgba(92, 16, 16, 0.2)"
+                                : "0 10px 40px -10px rgba(92, 16, 16, 0.3)",
+                            transform: isHovered ? "translateY(-5px)" : "translateY(0)",
+                        }}
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                    >
+                        <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden bg-white relative">
+                            <Image
+                                src="/ceo-profile.png"
+                                alt="Dr. Waleed Alzahrani PhD"
+                                width={224}
+                                height={224}
+                                className="w-full h-full object-cover transition-transform duration-700 ease-out"
+                                style={{
+                                    transform: isHovered ? "scale(1.05)" : "scale(1)",
+                                }}
+                            />
+                            {/* Subtle shine effect on hover */}
+                            <div
+                                className="absolute inset-0 rounded-full transition-opacity duration-500"
+                                style={{
+                                    background:
+                                        "linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.2) 50%, transparent 60%)",
+                                    opacity: isHovered ? 1 : 0,
+                                }}
+                            ></div>
+                        </div>
+                    </div>
+
+                    {/* Name with fade-in animation */}
+                    <h2
+                        className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 transition-all duration-300"
+                        style={{
+                            letterSpacing: isHovered ? "0.02em" : "0",
+                        }}
+                    >
+                        Dr. Waleed Alzahrani PhD
+                    </h2>
+
+                    {/* Title with subtle underline animation */}
+                    <div className="relative inline-block mb-8">
+                        <p className="text-lg font-medium" style={{ color: "#5C1010" }}>
+                            Chief Executive Officer
+                        </p>
+                        <div
+                            className="absolute -bottom-1 left-1/2 h-0.5 transition-all duration-500 ease-out"
+                            style={{
+                                backgroundColor: "#5C1010",
+                                width: isHovered ? "100%" : "0%",
+                                transform: "translateX(-50%)",
+                            }}
+                        ></div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
+                        Dr. Waleed Alzahrani is a distinguished investor and visionary
+                        founder whose firsthand experience owning and scaling a large real
+                        estate portfolio shapes WA MAC's unwavering commitment to providing
+                        the best home experience for landlords, tenants, and homeowners.
+                    </p>
+                </div>
+
+                {/* COO Section with hover animation */}
+                <div className="pt-10 group cursor-pointer">
+                    {/* Icon with bounce animation on hover */}
+                    <div className="mx-auto mb-4 w-16 h-16 relative transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1">
+                        <Image
+                            src="/coo-icon.png"
+                            alt="COO Icon"
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
+
+                    {/* Label with arrow hint */}
+                    <p className="text-gray-700 font-medium text-lg inline-flex items-center gap-2 group-hover:text-gray-900 transition-colors duration-300">
+                        A Note From the COO
+                        <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-1">
+                            →
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    );
+}
