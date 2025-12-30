@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LeadershipSection() {
     const [isHovered, setIsHovered] = useState(false);
+    const router = useRouter();
 
     return (
         <section className="bg-white py-24 md:py-28 pb-8 md:pb-12 relative overflow-hidden">
@@ -104,8 +106,8 @@ export default function LeadershipSection() {
                     </p>
                 </div>
 
-                {/* COO Section with hover animation */}
-                <div className="pt-10 group cursor-pointer">
+                {/* COO Note Section with hover animation */}
+                <div className="pt-10 group cursor-pointer" onClick={() => router.push('/coo-note')}>
                     {/* Icon with bounce animation on hover */}
                     <div className="mx-auto mb-4 w-16 h-16 relative transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1">
                         <Image

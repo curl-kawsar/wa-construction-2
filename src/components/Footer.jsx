@@ -74,9 +74,9 @@ export default function Footer() {
                             >
                                 About us
                             </Link>
-                            <button className="block text-left text-gray-300 hover:text-white transition-colors">
+                            <a href="tel:+14633333896" className="block text-left text-gray-300 hover:text-white transition-colors">
                                 Contact us
-                            </button>
+                            </a>
                             <button className="block text-left text-gray-300 hover:text-white transition-colors">
                                 Privacy Policy
                             </button>
@@ -120,12 +120,12 @@ export default function Footer() {
                                     ></path>
                                 </svg>
                             </div>
-                            <div>
+                            <a href="tel:+14633333896" className="hover:opacity-80 transition-opacity">
                                 <p className="text-sm text-gray-400">Call Us at</p>
                                 <p className="text-lg font-semibold text-white">
                                     (463) 333-3896
                                 </p>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>

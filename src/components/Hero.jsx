@@ -27,8 +27,8 @@ export default function Hero() {
                 {/* Main Hero Content */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20 relative">
 
-                    {/* Left Column: Text */}
-                    <div className="relative z-10">
+                    {/* Left Column: Text (appears second on mobile) */}
+                    <div className="relative z-10 order-2 md:order-1">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                             Building the <br />
                             Foundations of <br />
@@ -39,16 +39,17 @@ export default function Hero() {
                             complex projects with precision, safety, and guaranteed on-time
                             completion
                         </p>
-                        <button
-                            className="text-white px-8 py-3 rounded-md font-medium text-lg transition-transform transform hover:scale-105 shadow-md"
+                        <a
+                            href="tel:+14633333896"
+                            className="inline-block text-white px-8 py-3 rounded-md font-medium text-lg transition-transform transform hover:scale-105 shadow-md"
                             style={{ backgroundColor: "#611A1A" }}
                         >
-                            Lets have a discovery call
-                        </button>
+                            Let's Make a Discovery Call
+                        </a>
                     </div>
 
-                    {/* Right Column: Wireframe Image */}
-                    <div className="relative z-10 flex justify-center items-center">
+                    {/* Right Column: Wireframe Image (appears first on mobile) */}
+                    <div className="relative z-10 flex justify-center items-center order-1 md:order-2">
                         {/* Using a placeholder for the wireframe image. 
                  The user provided an image that contained a wireframe sketch. 
                  We will assume there's a file named 'hero-wireframe.png' or similar, 

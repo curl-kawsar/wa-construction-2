@@ -83,7 +83,7 @@ export default function TeamSection() {
                                 </h3>
 
                                 {/* Role */}
-                                <p className="text-gray-400 text-sm uppercase tracking-wider mb-4">
+                                <p className="text-gray-400 text-sm uppercase tracking-widest mb-4 font-semibold" style={{ letterSpacing: '0.15em' }}>
                                     {member.role}
                                 </p>
 
