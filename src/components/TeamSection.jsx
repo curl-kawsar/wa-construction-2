@@ -6,7 +6,7 @@ const teamMembers = [
         role: "COO",
         image: "/erin.png",
         description:
-            "Our Chief Operating Officer is the driving force behind our daily operations, known for an exceptional work ethic, relentless passion, and inspiring leadership. She is like a wave that keeps everything flowing steadily guiding the team through challenges with grace and momentum.",
+            "Our Chief Operating Officer is the driving force behind our daily operations, known for an exceptional work ethic, relentless passion, and inspiring leadership. She is like a wave that keeps everything flowing steadily guiding the team through challenges with grace and momentum. ",
     },
     {
         name: "Laura Leigh",
@@ -20,7 +20,7 @@ const teamMembers = [
 export default function TeamSection() {
     return (
         <section className="bg-white py-8 md:py-12 relative overflow-hidden">
-            {/* Dotted pattern background using border color */}
+            {/* Dotted pattern background */}
             <div
                 className="absolute inset-0 pointer-events-none opacity-10"
                 style={{
@@ -31,64 +31,90 @@ export default function TeamSection() {
 
             <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-12">
-                    <p className="text-gray-600 text-sm uppercase tracking-wider mb-2">
+                <div className="text-center mb-8 md:mb-12 max-w-[768px] mx-auto px-4">
+                    <p 
+                        className="font-semibold mb-2 text-gray-900"
+                        style={{
+                            fontSize: 'clamp(14px, 2vw, 20px)',
+                            lineHeight: '1.5',
+                        }}
+                    >
                         Leadership
                     </p>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                    <h2 
+                        className="font-bold text-gray-900"
+                        style={{
+                            fontSize: 'clamp(28px, 4vw, 48px)',
+                            lineHeight: '1.2',
+                        }}
+                    >
                         Our Team
                     </h2>
                 </div>
 
                 {/* Team Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[25px]">
                     {teamMembers.map((member, index) => (
                         <div
                             key={index}
-                            className="rounded-2xl p-[2px] overflow-hidden"
+                            className="rounded-2xl overflow-hidden"
                             style={{
-                                background: "linear-gradient(135deg, #661111 0%, #3C0C0C 100%)",
+                                background: "linear-gradient(180deg, #151515 0%, #3c0c0c 100%)",
+                                border: "2px solid rgba(102, 17, 17, 0.9)",
                             }}
                         >
                             <div
-                                className="rounded-2xl p-8 md:p-10 text-center h-full"
+                                className="rounded-2xl h-full flex flex-col items-center justify-center px-4 py-6 sm:px-6 sm:py-8 md:py-10 gap-4 md:gap-6"
                                 style={{
-                                    background: "linear-gradient(180deg, #151515 0%, #3C0C0C 100%)",
+                                    background: "linear-gradient(180deg, #151515 0%, #3c0c0c 100%)",
                                 }}
                             >
                                 {/* Profile Image */}
-                                <div className="mx-auto mb-6 w-28 h-28 md:w-32 md:h-32 relative">
-                                    <div
-                                        className="w-full h-full rounded-full p-[2px] overflow-hidden"
-                                        style={{
-                                            background:
-                                                "linear-gradient(135deg, #661111 0%, #3C0C0C 100%)",
-                                        }}
-                                    >
-                                        <div className="w-full h-full rounded-full overflow-hidden bg-gray-800">
-                                            <Image
-                                                src={member.image}
-                                                alt={member.name}
-                                                width={128}
-                                                height={128}
-                                                className="w-full h-full object-cover"
-                                            />
-                                        </div>
+                                <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-[150px] md:h-[150px]">
+                                    <div className="w-full h-full rounded-full overflow-hidden bg-gray-200">
+                                        <Image
+                                            src={member.image}
+                                            alt={member.name}
+                                            width={150}
+                                            height={150}
+                                            className="w-full h-full object-cover"
+                                        />
                                     </div>
                                 </div>
 
-                                {/* Name */}
-                                <h3 className="text-2xl md:text-3xl font-semibold text-white mb-1">
-                                    {member.name}
-                                </h3>
+                                {/* Name and Role */}
+                                <div className="flex flex-col items-center gap-2 md:gap-4 w-full">
+                                    {/* Name */}
+                                    <h3 
+                                        className="text-white text-center font-normal"
+                                        style={{
+                                            fontSize: 'clamp(20px, 3vw, 32px)',
+                                        }}
+                                    >
+                                        {member.name}
+                                    </h3>
 
-                                {/* Role */}
-                                <p className="text-gray-400 text-sm uppercase tracking-widest mb-4 font-semibold" style={{ letterSpacing: '0.15em' }}>
-                                    {member.role}
-                                </p>
+                                    {/* Role */}
+                                    <p 
+                                        className="text-white text-center font-normal"
+                                        style={{
+                                            fontSize: 'clamp(16px, 2.5vw, 24px)',
+                                            lineHeight: '1.5',
+                                        }}
+                                    >
+                                        {member.role}
+                                    </p>
+                                </div>
 
                                 {/* Description */}
-                                <p className="text-gray-400 text-sm leading-relaxed">
+                                <p 
+                                    className="text-white font-light text-center leading-relaxed px-2"
+                                    style={{
+                                        fontSize: 'clamp(14px, 2vw, 20px)',
+                                        letterSpacing: '-0.2px',
+                                        maxWidth: '518px',
+                                    }}
+                                >
                                     {member.description}
                                 </p>
                             </div>

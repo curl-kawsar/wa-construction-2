@@ -15,8 +15,8 @@ export default function Footer() {
                 backgroundColor: "#0a0a0a",
             }}
         >
-            <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-12">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12 mb-6 sm:mb-8 md:mb-12">
                     {/* Column 1: Logo and Brand */}
                     <div>
                         <div className="flex flex-col items-center mb-4">
@@ -29,10 +29,6 @@ export default function Footer() {
                                     minHeight: "150px",
                                 }}
                             >
-                                {/* Using a standard img tag as per provided HTML, or Next.js Image if preferred. 
-                    Sticking to simple img for direct compatibility with provided code structure unless specifically asked to optimize. 
-                    However, Next.js Image is better. I will use a standard img tag for now to match exactly what might be expected relative to the 'public' folder paths.
-                */}
                                 <img
                                     alt="WA Management & Consulting Logo"
                                     className="object-contain"
@@ -54,7 +50,14 @@ export default function Footer() {
 
                     {/* Column 2: Quick Links */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+                        <h3 
+                            className="font-semibold mb-3 md:mb-4"
+                            style={{
+                                fontSize: 'clamp(16px, 2vw, 18px)',
+                            }}
+                        >
+                            Quick Links
+                        </h3>
                         <nav className="space-y-2">
                             <Link
                                 href="/"
@@ -85,16 +88,23 @@ export default function Footer() {
 
                     {/* Column 3: Stay Connected */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-4">Stay Connected</h3>
+                        <h3 
+                            className="font-semibold mb-3 md:mb-4"
+                            style={{
+                                fontSize: 'clamp(16px, 2vw, 18px)',
+                            }}
+                        >
+                            Stay Connected
+                        </h3>
                         <div className="mb-6">
-                            <div className="flex gap-2">
+                            <div className="flex flex-col sm:flex-row gap-2">
                                 <input
                                     type="email"
                                     placeholder="Email address"
-                                    className="flex-1 bg-gray-900 border-2 border-[#611A1A] rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-red-500"
+                                    className="flex-1 bg-gray-900 border-2 border-[#611A1A] rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-red-500 text-sm sm:text-base"
                                 />
                                 <button
-                                    className="text-white px-6 py-2 rounded-lg hover:brightness-110 transition-colors font-medium whitespace-nowrap"
+                                    className="text-white px-4 sm:px-6 py-2 rounded-lg hover:brightness-110 transition-colors font-medium whitespace-nowrap text-sm sm:text-base"
                                     style={{ backgroundColor: "#611A1A" }}
                                 >
                                     Subscribe Now
@@ -121,8 +131,20 @@ export default function Footer() {
                                 </svg>
                             </div>
                             <a href="tel:+14633333896" className="hover:opacity-80 transition-opacity">
-                                <p className="text-sm text-gray-400">Call Us at</p>
-                                <p className="text-lg font-semibold text-white">
+                                <p 
+                                    className="text-gray-400"
+                                    style={{
+                                        fontSize: 'clamp(12px, 1.5vw, 14px)',
+                                    }}
+                                >
+                                    Call Us at
+                                </p>
+                                <p 
+                                    className="font-semibold text-white"
+                                    style={{
+                                        fontSize: 'clamp(14px, 2vw, 18px)',
+                                    }}
+                                >
                                     (463) 333-3896
                                 </p>
                             </a>

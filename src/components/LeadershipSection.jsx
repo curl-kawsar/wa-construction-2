@@ -9,7 +9,7 @@ export default function LeadershipSection() {
     const router = useRouter();
 
     return (
-        <section className="bg-white py-24 md:py-28 pb-8 md:pb-12 relative overflow-hidden">
+        <section className="bg-white py-12 md:py-20 lg:py-24 xl:py-28 pb-8 md:pb-12 relative overflow-hidden">
             {/* Background Image with subtle animation */}
             <div
                 className="absolute inset-0 pointer-events-none bg-center bg-no-repeat transition-all duration-1000 ease-in-out"
@@ -49,7 +49,7 @@ export default function LeadershipSection() {
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                     >
-                        <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden bg-white relative">
+                        <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden bg-white relative">
                             <Image
                                 src="/ceo-profile.png"
                                 alt="Dr. Waleed Alzahrani PhD"
@@ -74,8 +74,9 @@ export default function LeadershipSection() {
 
                     {/* Name with fade-in animation */}
                     <h2
-                        className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 transition-all duration-300"
+                        className="font-bold text-gray-900 mb-3 transition-all duration-300"
                         style={{
+                            fontSize: 'clamp(24px, 4vw, 36px)',
                             letterSpacing: isHovered ? "0.02em" : "0",
                         }}
                     >
@@ -98,18 +99,20 @@ export default function LeadershipSection() {
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
-                        Dr. Waleed Alzahrani is a distinguished investor and visionary
-                        founder whose firsthand experience owning and scaling a large real
-                        estate portfolio shapes WA MAC's unwavering commitment to providing
-                        the best home experience for landlords, tenants, and homeowners.
+                    <p 
+                        className="text-gray-600 leading-relaxed max-w-2xl mx-auto px-4"
+                        style={{
+                            fontSize: 'clamp(14px, 2vw, 18px)',
+                        }}
+                    >
+                        Dr. Waleed Alzahrani is a distinguished investor and visionary founder whose firsthand experience owning and scaling a large real estate portfolio shapes WA MAC's unwavering commitment to providing the best home experience for landlords, tenants, and homeowners.
                     </p>
                 </div>
 
                 {/* COO Note Section with hover animation */}
                 <div className="pt-10 group cursor-pointer" onClick={() => router.push('/coo-note')}>
                     {/* Icon with bounce animation on hover */}
-                    <div className="mx-auto mb-4 w-16 h-16 relative transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1">
+                    <div className="mx-auto mb-4 w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 relative transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1">
                         <Image
                             src="/coo-icon.png"
                             alt="COO Icon"
@@ -119,7 +122,12 @@ export default function LeadershipSection() {
                     </div>
 
                     {/* Label with arrow hint */}
-                    <p className="text-gray-700 font-medium text-lg inline-flex items-center gap-2 group-hover:text-gray-900 transition-colors duration-300">
+                    <p 
+                        className="text-gray-700 font-medium inline-flex items-center gap-2 group-hover:text-gray-900 transition-colors duration-300"
+                        style={{
+                            fontSize: 'clamp(14px, 2vw, 18px)',
+                        }}
+                    >
                         A Note From the COO
                         <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-1">
                             →
