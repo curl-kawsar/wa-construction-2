@@ -19,7 +19,7 @@ const teamMembers = [
 
 export default function TeamSection() {
     return (
-        <section className="bg-white py-8 md:py-12 relative overflow-hidden">
+        <section className="bg-white pt-0 pb-8 md:pb-12 relative overflow-hidden" style={{ marginTop: '-64px' }}>
             {/* Dotted pattern background */}
             <div
                 className="absolute inset-0 pointer-events-none opacity-10"

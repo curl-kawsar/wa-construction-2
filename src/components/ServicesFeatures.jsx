@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ServicesFeatures() {
     return (
-        <section className="bg-white py-12 md:py-16 lg:py-24">
+        <section className="bg-white pt-12 md:pt-16 lg:pt-24 pb-0 relative overflow-hidden" style={{ marginBottom: '-48px' }}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
                     {/* Left Column: Feature Blocks */}

@@ -59,7 +59,7 @@ export default function COONotePage() {
                             height={1600}
                             decoding="async"
                             className="w-full h-auto object-contain"
-                            src="/note.png"
+                            src="/letter wa construction.jpeg"
                             priority
                         />
                     </div>

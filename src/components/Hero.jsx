@@ -16,9 +16,9 @@ export default function Hero() {
     const slides = [
         "/hero-slide-1.png",
         "/hero-slide-2.png",
-        "/hero-slide-3.png",
         "/hero-slide-4.png",
-        "/hero-slide-5.png"
+        "/hero-slide-5.png",
+        "/slider 7.jpg"
     ];
 
     return (

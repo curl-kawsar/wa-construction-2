@@ -9,7 +9,7 @@ export default function LeadershipSection() {
     const router = useRouter();
 
     return (
-        <section className="bg-white py-12 md:py-20 lg:py-24 xl:py-28 pb-8 md:pb-12 relative overflow-hidden">
+        <section className="bg-white py-12 md:py-20 lg:py-24 xl:py-28 pb-0 relative overflow-hidden" style={{ marginBottom: '-48px' }}>
             {/* Background Image with subtle animation */}
             <div
                 className="absolute inset-0 pointer-events-none bg-center bg-no-repeat transition-all duration-1000 ease-in-out"
@@ -35,7 +35,7 @@ export default function LeadershipSection() {
 
             <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10">
                 {/* CEO Profile */}
-                <div className="mb-20">
+                <div className="mb-4 md:mb-6">
                     {/* Profile Image Container with Border - Enhanced with hover effect */}
                     <div
                         className="mx-auto mb-10 inline-block p-2 rounded-full transition-all duration-500 ease-out cursor-pointer"
@@ -110,7 +110,7 @@ export default function LeadershipSection() {
                 </div>
 
                 {/* COO Note Section with hover animation */}
-                <div className="pt-10 group cursor-pointer" onClick={() => router.push('/coo-note')}>
+                <div className="pt-2 md:pt-3 group cursor-pointer" onClick={() => router.push('/coo-note')}>
                     {/* Icon with bounce animation on hover */}
                     <div className="mx-auto mb-4 w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 relative transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1">
                         <Image
@@ -121,17 +121,14 @@ export default function LeadershipSection() {
                         />
                     </div>
 
-                    {/* Label with arrow hint */}
+                    {/* Label */}
                     <p 
-                        className="text-gray-700 font-medium inline-flex items-center gap-2 group-hover:text-gray-900 transition-colors duration-300"
+                        className="text-gray-700 font-medium group-hover:text-gray-900 transition-colors duration-300"
                         style={{
                             fontSize: 'clamp(14px, 2vw, 18px)',
                         }}
                     >
                         A Note From the COO
-                        <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-1">
-                            →
-                        </span>
                     </p>
                 </div>
             </div>
