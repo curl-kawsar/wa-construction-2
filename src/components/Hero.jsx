@@ -22,8 +22,56 @@ export default function Hero() {
     ];
 
     return (
-        <section className="bg-[#FFFAEB] relative w-full overflow-hidden">
-            <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-[348px] relative">
+        <section className="relative w-full overflow-hidden" style={{ background: 'linear-gradient(180deg, #FFFAEB 0%, #FFFFFF 100%)' }}>
+            {/* Vector Lines Overlay - Responsive */}
+            <div className="absolute inset-0 pointer-events-none opacity-30" style={{ zIndex: 1 }}>
+                {/* Left vertical line - responsive */}
+                <div 
+                    className="absolute top-0 bottom-0"
+                    style={{
+                        left: 'clamp(50px, 13.4%, 258px)',
+                        width: '1px',
+                        background: 'rgba(0, 0, 0, 0.1)',
+                    }}
+                />
+                {/* Center vertical line - responsive */}
+                <div 
+                    className="absolute top-0 bottom-0"
+                    style={{
+                        left: 'clamp(200px, 49.4%, 949px)',
+                        width: '1px',
+                        background: 'rgba(0, 0, 0, 0.1)',
+                    }}
+                />
+                {/* Right vertical line - responsive */}
+                <div 
+                    className="absolute top-0 bottom-0"
+                    style={{
+                        left: 'clamp(300px, 86.5%, 1660px)',
+                        width: '1px',
+                        background: 'rgba(0, 0, 0, 0.1)',
+                    }}
+                />
+                {/* Top horizontal line - responsive */}
+                <div 
+                    className="absolute left-0 right-0"
+                    style={{
+                        top: 'clamp(80px, 7.4%, 142px)',
+                        height: '1px',
+                        background: 'rgba(0, 0, 0, 0.1)',
+                    }}
+                />
+                {/* Bottom horizontal line - responsive */}
+                <div 
+                    className="absolute left-0 right-0"
+                    style={{
+                        bottom: 'clamp(0px, 45.5%, 837px)',
+                        height: '1px',
+                        background: 'rgba(0, 0, 0, 0.1)',
+                    }}
+                />
+            </div>
+            <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-[348px] relative" style={{ zIndex: 2 }}>
                 {/* Main Hero Content */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center pt-6 md:pt-8 lg:pt-12 xl:pt-16 pb-8 md:pb-12 lg:pb-16 xl:pb-20 relative">
                     {/* Left Column: Text */}
@@ -49,7 +97,7 @@ export default function Hero() {
                                     color: '#474747',
                                 }}
                             >
-                                For over 20 years, Wa Construction has specialized in delivering complex projects with precision, safety, and guaranteed on-time completion
+                                Wa Construction has specialized in delivering complex projects with precision, safety, and guaranteed on-time completion
                             </p>
                         </div>
                         <a
@@ -81,9 +129,9 @@ export default function Hero() {
                     {/* Right Column: Wireframe Image */}
                     <div className="relative z-10 flex justify-center lg:justify-end items-center order-1 lg:order-2">
                         <div 
-                            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-[711px] aspect-square lg:aspect-auto relative"
+                            className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-[800px] 2xl:max-w-[900px] aspect-square lg:aspect-auto relative"
                             style={{
-                                height: 'clamp(250px, 35vw, 550px)',
+                                height: 'clamp(300px, 40vw, 700px)',
                             }}
                         >
                             <Image 
@@ -98,19 +146,24 @@ export default function Hero() {
             </div>
 
             {/* Bottom Section: Image Slider */}
-            <div className="w-full bg-white relative z-20 pt-8 md:pt-12 pb-8 md:pb-12">
+            <div className="w-full bg-white relative z-20" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
                 {/* Carousel Container */}
-                <div className="embla overflow-hidden px-4 sm:px-6 md:px-8" ref={emblaRef}>
-                    <div className="embla__container flex">
+                <div className="embla overflow-hidden" ref={emblaRef} style={{ width: '100%', maxWidth: '2349px', margin: '0 auto' }}>
+                    <div className="embla__container flex" style={{ gap: '24px' }}>
                         {slides.map((src, index) => (
                             <div 
-                                className="embla__slide flex-[0_0_100%] sm:flex-[0_0_50%] md:flex-[0_0_33.33%] lg:flex-[0_0_25%] min-w-0" 
+                                className="embla__slide flex-[0_0_auto] min-w-0" 
                                 key={index}
                             >
                                 <div 
-                                    className="h-48 sm:h-56 md:h-64 relative mx-1 md:mx-2"
+                                    className="relative overflow-hidden"
+                                    style={{
+                                        width: 'clamp(200px, 20vw, 450px)',
+                                        height: '451px',
+                                        borderRadius: '0',
+                                    }}
                                 >
-                                    <Image src={src} alt={`Project Image ${index + 1}`} fill className="object-cover rounded-lg" />
+                                    <Image src={src} alt={`Project Image ${index + 1}`} fill className="object-cover" style={{ borderRadius: '0' }} />
                                 </div>
                             </div>
                         ))}

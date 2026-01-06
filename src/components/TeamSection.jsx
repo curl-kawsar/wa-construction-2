@@ -20,6 +20,36 @@ const teamMembers = [
 export default function TeamSection() {
     return (
         <section className="bg-white pt-0 pb-8 md:pb-12 relative overflow-hidden" style={{ marginTop: '-64px' }}>
+            {/* Vector Lines Overlay - Responsive */}
+            <div className="absolute inset-0 pointer-events-none opacity-30" style={{ zIndex: 1 }}>
+                {/* Left vertical line - responsive */}
+                <div 
+                    className="absolute top-0 bottom-0"
+                    style={{
+                        left: 'clamp(50px, 13.4%, 258px)',
+                        width: '1px',
+                        background: 'rgba(0, 0, 0, 0.1)',
+                    }}
+                />
+                {/* Center vertical line - responsive */}
+                <div 
+                    className="absolute top-0 bottom-0"
+                    style={{
+                        left: 'clamp(200px, 49.4%, 949px)',
+                        width: '1px',
+                        background: 'rgba(0, 0, 0, 0.1)',
+                    }}
+                />
+                {/* Right vertical line - responsive */}
+                <div 
+                    className="absolute top-0 bottom-0"
+                    style={{
+                        left: 'clamp(300px, 86.5%, 1660px)',
+                        width: '1px',
+                        background: 'rgba(0, 0, 0, 0.1)',
+                    }}
+                />
+            </div>
             {/* Dotted pattern background */}
             <div
                 className="absolute inset-0 pointer-events-none opacity-10"
@@ -29,7 +59,7 @@ export default function TeamSection() {
                 }}
             ></div>
 
-            <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative" style={{ zIndex: 10 }}>
                 {/* Header */}
                 <div className="text-center mb-8 md:mb-12 max-w-[768px] mx-auto px-4">
                     <p 

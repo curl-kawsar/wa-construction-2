@@ -10,6 +10,36 @@ export default function LeadershipSection() {
 
     return (
         <section className="bg-white py-12 md:py-20 lg:py-24 xl:py-28 pb-0 relative overflow-hidden" style={{ marginBottom: '-48px' }}>
+            {/* Vector Lines Overlay - Responsive */}
+            <div className="absolute inset-0 pointer-events-none opacity-30" style={{ zIndex: 1 }}>
+                {/* Left vertical line - responsive */}
+                <div 
+                    className="absolute top-0 bottom-0"
+                    style={{
+                        left: 'clamp(50px, 13.4%, 258px)',
+                        width: '1px',
+                        background: 'rgba(0, 0, 0, 0.1)',
+                    }}
+                />
+                {/* Center vertical line - responsive */}
+                <div 
+                    className="absolute top-0 bottom-0"
+                    style={{
+                        left: 'clamp(200px, 49.4%, 949px)',
+                        width: '1px',
+                        background: 'rgba(0, 0, 0, 0.1)',
+                    }}
+                />
+                {/* Right vertical line - responsive */}
+                <div 
+                    className="absolute top-0 bottom-0"
+                    style={{
+                        left: 'clamp(300px, 86.5%, 1660px)',
+                        width: '1px',
+                        background: 'rgba(0, 0, 0, 0.1)',
+                    }}
+                />
+            </div>
             {/* Background Image with subtle animation */}
             <div
                 className="absolute inset-0 pointer-events-none bg-center bg-no-repeat transition-all duration-1000 ease-in-out"
@@ -33,7 +63,7 @@ export default function LeadershipSection() {
             {/* Subtle gradient overlay */}
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-white/30 to-white/60"></div>
 
-            <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10">
+            <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative" style={{ zIndex: 10 }}>
                 {/* CEO Profile */}
                 <div className="mb-4 md:mb-6">
                     {/* Profile Image Container with Border - Enhanced with hover effect */}

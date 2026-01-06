@@ -1,30 +1,47 @@
 export default function BuildingApproach() {
     return (
-        <section className="bg-black text-white relative w-full pt-12 md:pt-16 lg:pt-20 xl:pt-24 pb-10 md:pb-12 lg:pb-16 xl:pb-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-[259px] min-h-[350px] md:min-h-[450px] lg:min-h-[550px] xl:min-h-[736px]">
-            {/* Grid lines overlay - hidden on mobile */}
-            <div className="hidden lg:block absolute inset-0 pointer-events-none opacity-20">
-                {/* Vertical line in center */}
+        <section className="bg-black text-white relative w-full pt-16 md:pt-20 lg:pt-24 xl:pt-28 pb-10 md:pb-12 lg:pb-16 xl:pb-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-[259px] min-h-[350px] md:min-h-[450px] lg:min-h-[550px] xl:min-h-[736px]">
+            {/* Vector Lines Overlay - Responsive */}
+            <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1, opacity: 0.3 }}>
+                {/* Left vertical line - responsive */}
                 <div 
                     className="absolute top-0 bottom-0"
                     style={{
-                        left: '50%',
+                        left: 'clamp(50px, 13.4%, 258px)',
                         width: '1px',
-                        background: 'repeating-linear-gradient(to bottom, white 0, white 2px, transparent 2px, transparent 8px)',
-                        transform: 'translateX(-50%)',
+                        background: 'repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 2px, transparent 2px, transparent 8px)',
                     }}
                 />
-                {/* Horizontal line */}
+                {/* Right vertical line - responsive */}
+                <div 
+                    className="absolute top-0 bottom-0"
+                    style={{
+                        left: 'clamp(300px, 86.6%, 1662px)',
+                        width: '1px',
+                        background: 'repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 2px, transparent 2px, transparent 8px)',
+                    }}
+                />
+                {/* Top horizontal line - responsive */}
                 <div 
                     className="absolute left-0 right-0"
                     style={{
-                        top: '33%',
+                        top: 'clamp(60px, 12.2%, 90px)',
                         height: '1px',
-                        background: 'repeating-linear-gradient(to right, white 0, white 2px, transparent 2px, transparent 8px)',
+                        background: 'repeating-linear-gradient(to right, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 2px, transparent 2px, transparent 8px)',
+                    }}
+                />
+                {/* Middle horizontal line - responsive */}
+                <div 
+                    className="absolute left-0 right-0"
+                    style={{
+                        top: 'clamp(150px, 34%, 250px)',
+                        height: '1px',
+                        background: 'repeating-linear-gradient(to right, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 2px, transparent 2px, transparent 8px)',
                     }}
                 />
             </div>
 
-            <div className="relative z-10 flex items-center justify-center lg:justify-end min-h-[350px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[544px]">
+            <div className="relative z-10 flex items-center justify-center lg:justify-end min-h-[350px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[544px]" style={{ zIndex: 2 }}>
                 {/* Content block - center on mobile, right on desktop */}
                 <div className="w-full max-w-full lg:max-w-[1200px] xl:max-w-[1404px]">
                     {/* Heading - Responsive font sizes */}
