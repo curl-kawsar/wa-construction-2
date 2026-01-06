@@ -79,12 +79,18 @@ export default function LeadershipSection() {
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                     >
-                        <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden bg-white relative">
+                        <div 
+                            className="rounded-full overflow-hidden bg-white relative"
+                            style={{
+                                width: 'clamp(150px, 25vw, 408px)',
+                                height: 'clamp(150px, 25vw, 408px)',
+                            }}
+                        >
                             <Image
                                 src="/ceo-profile.png"
                                 alt="Dr. Waleed Alzahrani PhD"
-                                width={224}
-                                height={224}
+                                width={408}
+                                height={408}
                                 className="w-full h-full object-cover transition-transform duration-700 ease-out"
                                 style={{
                                     transform: isHovered ? "scale(1.05)" : "scale(1)",
@@ -106,7 +112,7 @@ export default function LeadershipSection() {
                     <h2
                         className="font-bold text-gray-900 mb-3 transition-all duration-300"
                         style={{
-                            fontSize: 'clamp(24px, 4vw, 36px)',
+                            fontSize: 'clamp(28px, 4vw, 48px)',
                             letterSpacing: isHovered ? "0.02em" : "0",
                         }}
                     >
@@ -115,7 +121,7 @@ export default function LeadershipSection() {
 
                     {/* Title with subtle underline animation */}
                     <div className="relative inline-block mb-8">
-                        <p className="text-lg font-medium" style={{ color: "#5C1010" }}>
+                        <p className="font-medium" style={{ color: "#5C1010", fontSize: 'clamp(20px, 3vw, 32px)' }}>
                             Chief Executive Officer
                         </p>
                         <div
@@ -132,7 +138,7 @@ export default function LeadershipSection() {
                     <p 
                         className="text-gray-600 leading-relaxed max-w-2xl mx-auto px-4"
                         style={{
-                            fontSize: 'clamp(14px, 2vw, 18px)',
+                            fontSize: 'clamp(16px, 2.5vw, 24px)',
                         }}
                     >
                         Dr. Waleed Alzahrani is a distinguished investor and visionary founder whose firsthand experience owning and scaling a large real estate portfolio shapes WA MAC's unwavering commitment to providing the best home experience for landlords, tenants, and homeowners.

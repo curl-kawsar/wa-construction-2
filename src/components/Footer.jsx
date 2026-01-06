@@ -6,15 +6,24 @@ import Link from "next/link";
 export default function Footer() {
     return (
         <footer
-            className="text-white relative"
+            className="text-white relative overflow-hidden"
             style={{
-                backgroundImage: "url('/footer.png')",
-                backgroundSize: "100% 50%",
-                backgroundPosition: "bottom center",
-                backgroundRepeat: "no-repeat",
-                backgroundColor: "#0a0a0a",
+                backgroundColor: "#1e1e1e",
             }}
         >
+            {/* Buildings Background Image - matching Figma */}
+            <div 
+                className="absolute left-0 right-0 mix-blend-overlay pointer-events-none"
+                style={{
+                    top: '131px',
+                    aspectRatio: '1440/296',
+                    opacity: 0.6,
+                    backgroundImage: "url('/footer.png')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                }}
+            />
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12 mb-6 sm:mb-8 md:mb-12">
                     {/* Column 1: Logo and Brand */}
