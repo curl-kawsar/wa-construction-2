@@ -5,12 +5,13 @@ import { useState } from "react";
 
 export default function ServicesFeatures() {
     const [selectedFeature, setSelectedFeature] = useState(0);
+    const [hoveredFeature, setHoveredFeature] = useState(null);
 
     const features = [
         {
-            title: "Value Engineering",
-            description: "We optimize materials and methods during pre-construction to reduce costs without ever compromising quality or longevity.",
-            image: "/crane.png",
+            title: "Safety First Culture",
+            description: "Our zero-incident commitment is supported by stringent, continuous training, protecting our teams, your site, and your investment.",
+            image: "/safety-culture.png",
         },
         {
             title: "Predictive Scheduling",
@@ -18,9 +19,9 @@ export default function ServicesFeatures() {
             image: "/predictive-scheduling.png",
         },
         {
-            title: "Safety First Culture",
-            description: "Our zero-incident commitment is supported by stringent, continuous training, protecting our teams, your site, and your investment.",
-            image: "/safety-culture.png",
+            title: "Value Engineering",
+            description: "We optimize materials and methods during pre-construction to reduce costs without ever compromising quality or longevity.",
+            image: "/crane.png",
         },
     ];
 
@@ -75,31 +76,30 @@ export default function ServicesFeatures() {
             </div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative" style={{ zIndex: 2 }}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
-                    {/* Left Column: Feature Blocks */}
-                    <div className="space-y-8 md:space-y-10">
+                    {/* Left Column: Feature Blocks - order-2 on mobile, order-1 on desktop */}
+                    <div className="space-y-8 md:space-y-10 order-2 md:order-1">
                         {features.map((feature, index) => (
                             <div
                                 key={index}
                                 onClick={() => setSelectedFeature(index)}
-                                className="cursor-pointer transition-all duration-300 hover:opacity-80"
-                                style={{
-                                    opacity: selectedFeature === index ? 1 : 0.7,
-                                }}
+                                onMouseEnter={() => setHoveredFeature(index)}
+                                onMouseLeave={() => setHoveredFeature(null)}
+                                className="cursor-pointer transition-all duration-300"
                             >
                                 <h3 
-                                    className="font-bold text-gray-900 mb-2 md:mb-3 transition-colors duration-300"
+                                    className="font-bold mb-2 md:mb-3"
                                     style={{
                                         fontSize: 'clamp(20px, 3vw, 30px)',
-                                        color: selectedFeature === index ? '#1a1a1a' : '#4a4a4a',
+                                        color: '#000000',
                                     }}
                                 >
                                     {feature.title}
                                 </h3>
                                 <p 
-                                    className="text-gray-600 leading-relaxed transition-colors duration-300"
+                                    className="leading-relaxed"
                                     style={{
                                         fontSize: 'clamp(14px, 2vw, 16px)',
-                                        color: selectedFeature === index ? '#4b5563' : '#6b7280',
+                                        color: '#000000',
                                     }}
                                 >
                                     {feature.description}
@@ -108,27 +108,30 @@ export default function ServicesFeatures() {
                         ))}
                     </div>
 
-                    {/* Right Column: Dynamic Image */}
-                    <div className="relative flex justify-center items-center">
+                    {/* Right Column: Dynamic Image - order-1 on mobile, order-2 on desktop */}
+                    <div className="relative flex justify-center items-center order-1 md:order-2">
                         <div className="w-full max-w-lg aspect-[4/3] relative overflow-hidden">
-                            {features.map((feature, index) => (
-                                <div
-                                    key={index}
-                                    className="absolute inset-0 transition-opacity duration-500"
-                                    style={{
-                                        opacity: selectedFeature === index ? 1 : 0,
-                                        pointerEvents: selectedFeature === index ? 'auto' : 'none',
-                                    }}
-                                >
-                                    <Image
-                                        src={feature.image}
-                                        alt={feature.title}
-                                        fill
-                                        className="object-contain"
-                                        priority={index === 0}
-                                    />
-                                </div>
-                            ))}
+                            {features.map((feature, index) => {
+                                const isActive = hoveredFeature !== null ? hoveredFeature === index : selectedFeature === index;
+                                return (
+                                    <div
+                                        key={index}
+                                        className="absolute inset-0 transition-opacity duration-500"
+                                        style={{
+                                            opacity: isActive ? 1 : 0,
+                                            pointerEvents: isActive ? 'auto' : 'none',
+                                        }}
+                                    >
+                                        <Image
+                                            src={feature.image}
+                                            alt={feature.title}
+                                            fill
+                                            className="object-contain"
+                                            priority={index === 0}
+                                        />
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
