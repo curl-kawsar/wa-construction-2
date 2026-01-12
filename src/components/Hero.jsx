@@ -129,7 +129,7 @@ export default function Hero() {
                     {/* Right Column: Wireframe Image */}
                     <div className="relative z-10 flex justify-center lg:justify-end items-center order-1 lg:order-2">
                         <div 
-                            className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-[800px] 2xl:max-w-[900px] aspect-square lg:aspect-auto relative"
+                            className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-[800px] 2xl:max-w-[900px] aspect-square lg:aspect-auto relative animate-float"
                             style={{
                                 height: 'clamp(300px, 40vw, 700px)',
                             }}
